@@ -38,8 +38,8 @@ Sinta-se livre para adicionar recursos ao projeto se você tiver o tempo e conhe
 |  http://127.0.0.1:8000/ | employee/  | Listar todos os colaboradores ou adicionar novo colaborador  |
 | http://127.0.0.1:8000/  | employee/\<int:id>/  | Deletar um colaborador específico ou ver informações sobre um colaborador específico  |
 |  http://127.0.0.1:8000/ |  employee/list-all/ | Website público em Django com uma única página contendo um tabela simples listando todos os colaboradores e seus departamentos |
-| http://127.0.0.1:8000/  | department/  |  Deletar um departamento específico ou ver informações sobre um departamento específico |
-|  http://127.0.0.1:8000/ | department/\<str:department>  |   |
+| http://127.0.0.1:8000/  | department/  |  Listar todos os departamentos ou adicionar novo departamento |
+|  http://127.0.0.1:8000/ | department/\<str:department>  | Deletar um departamento específico ou ver informações sobre um departamento específico |
 
 
 
