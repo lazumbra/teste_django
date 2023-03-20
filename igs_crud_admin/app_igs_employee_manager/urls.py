@@ -6,7 +6,7 @@ from django.urls import path
 
 
 urlpatterns = [
-    path('', list_and_add_employee),
-    path('<int:pk>/', select_and_delete_employee),
-    path('list-all/', list_all_employee),
+    path('', list_and_add_employee, name="list_employees"),
+    path('<int:pk>/', select_and_delete_employee, name="specif_employees"),
+    path('list-all/', list_all_employee, name="list_all_employees"),
 ]
