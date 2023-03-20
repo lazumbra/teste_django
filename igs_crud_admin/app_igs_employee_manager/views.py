@@ -13,7 +13,7 @@ from rest_framework.response import Response
 
 
 @api_view(['GET', 'POST'])
-def employee_list(request):
+def list_and_add_employee(request):
     if request.method == 'GET':
         employees = Employee.objects.all()
         serializer = EmployeeSerializer(employees, many=True)
@@ -34,7 +34,7 @@ def list_all_employee(request):
 
 
 @api_view(['GET', 'DELETE'])
-def delete_employee(request, pk):
+def select_and_delete_employee(request, pk):
     try:
         employee = Employee.objects.get(pk=pk)
     except:
