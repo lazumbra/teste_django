@@ -5,6 +5,8 @@ from django.urls import path
 
 
 urlpatterns = [
-    path('', list_and_add_department),
-    path('<str:pk>/', select_and_delete_department),
+    path('', list_and_add_department, name="add_department"),
+    path('<str:pk>/',
+         select_and_delete_department,
+         name="specific_department"),
 ]
