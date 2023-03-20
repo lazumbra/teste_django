@@ -30,6 +30,19 @@ O aplicativo "IGS Employee Manager" deverá conter:
 
 Sinta-se livre para adicionar recursos ao projeto se você tiver o tempo e conhecimento para fazê-lo - como aumentar a testabilidade, leitura, gestão de ambiente de desenvolvimento e execução, ou documentação de API. Fique à vontade também para adicionar no arquivo README ou no próprio código comentários sobre suas decisões e abordagens técnicas ao desafio.
 
+## Rotas da API
+
+|  Rota Base |  Rota Complementar |  Descrição |
+|---|---|---|
+| http://127.0.0.1:8000/  | admin/  |  Acessar o painel no site administrativo do Django, |
+|  http://127.0.0.1:8000/ | employee/  | Listar todos os colaboradores ou adicionar novo colaborador  |
+| http://127.0.0.1:8000/  | employee/\<int:id>/  | Deletar um colaborador específico ou ver informações sobre um colaborador específico  |
+|  http://127.0.0.1:8000/ |  employee/list-all/ | Website público em Django com uma única página contendo um tabela simples listando todos os colaboradores e seus departamentos |
+| http://127.0.0.1:8000/  | department/  |  Deletar um departamento específico ou ver informações sobre um departamento específico |
+|  http://127.0.0.1:8000/ | department/\<str:department>  |   |
+
+
+
 ## Exemplo da API
 
 ### Requisição
