@@ -13,7 +13,7 @@ from rest_framework.response import Response
 
 
 @api_view(['GET', 'POST'])
-def department_list(request):
+def list_and_add_department(request):
     if request.method == 'GET':
         department = Department.objects.all()
         serializer = DepartmentSerializer(department, many=True)
@@ -27,7 +27,7 @@ def department_list(request):
 
 
 @api_view(['GET', 'DELETE'])
-def delete_department(request, pk):
+def select_and_delete_department(request, pk):
     try:
         department = Department.objects.get(pk=pk)
     except:
