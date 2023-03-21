@@ -153,9 +153,9 @@ dmypy.json
 cython_debug/
 
 # Personal
-app_department/migrations/
-igs_crud_admin/app_department/
-igs_crud_admin/app_igs_employee_manager/
+igs_crud_admin/app_department/migrations/
+igs_crud_admin/app_igs_employee_manager/migrations/
+
 
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
