@@ -1,12 +1,12 @@
-from app_department.views import (list_and_add_department,
-                                  select_and_delete_department)
+from app_department.views import (ListAllDepartament,
+                                  SpecificDepartments)
 
 from django.urls import path
 
 
 urlpatterns = [
-    path('', list_and_add_department, name="add_department"),
+    path('', ListAllDepartament.as_view(), name="add_department"),
     path('<str:pk>/',
-         select_and_delete_department,
+         SpecificDepartments.as_view(),
          name="specific_department"),
 ]

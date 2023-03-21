@@ -12,13 +12,13 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 
-@api_view(['GET', 'POST'])
-def list_and_add_department(request):
-    if request.method == 'GET':
+class ListAllDepartament(APIView):
+    def get(self, request):
         department = Department.objects.all()
         serializer = DepartmentSerializer(department, many=True)
         return Response(serializer.data)
-    elif request.method == 'POST':
+
+    def post(self, request):
         serializer = DepartmentSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
@@ -26,16 +26,19 @@ def list_and_add_department(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-@api_view(['GET', 'DELETE'])
-def select_and_delete_department(request, pk):
-    try:
-        department = Department.objects.get(pk=pk)
-    except:
-        return Response(status=status.HTTP_404_NOT_FOUND)
+class SpecificDepartments(APIView):
+    def get_object(self, pk):
+        try:
+            return Department.objects.get(pk=pk)
+        except:
+            return Response(status=status.HTTP_404_NOT_FOUND)
 
-    if request.method == 'GET':
+    def get(self, request, pk):
+        department = self.get_object(pk)
         serializer = DepartmentSerializer(department)
         return Response(serializer.data)
-    elif request.method == 'DELETE':
+
+    def delete(self, request, pk):
+        department = self.get_object(pk)
         department.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
