@@ -1,14 +1,9 @@
-from django.shortcuts import render
-
-# preciso importar tanto o modelo quanto o serializer
-
 from app_department.models import Department
 from app_department.serializers import DepartmentSerializer
 
 from rest_framework.views import APIView
 
 from rest_framework import status
-from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 
